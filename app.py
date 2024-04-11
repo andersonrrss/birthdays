@@ -61,7 +61,7 @@ def index():
 
         with sqlite3.connect("birthdays.db") as conn:
             db = conn.cursor()
-            data = db.execute("SELECT * FROM birthdays").fetchall()
+            data = db.execute("SELECT * FROM birthdays ORDER BY name").fetchall()
             birthdays = []
             for birthday in data:
                 bruna = {
